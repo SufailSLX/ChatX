@@ -1,16 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-  "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-  "build": "tsc",
-  "start": "node dist/index.js"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
@@ -26,8 +23,10 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.3.0",
-    "ts-node-dev": "^2.0.0",
+    "@types/node": "^20.11.0",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
 }
