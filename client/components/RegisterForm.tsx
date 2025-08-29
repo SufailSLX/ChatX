@@ -18,7 +18,7 @@ export default function RegisterForm() {
     try {
       const res = await api.post("/auth/register", { username, email, password });
       console.log("User registered:", res.data);
-      router.push("/login"); // Redirect to login after success
+      router.push("/login"); //Redirect to login after success
     } catch (err: any) {
       setError(err.response?.data?.message || "Registration failed");
     }
